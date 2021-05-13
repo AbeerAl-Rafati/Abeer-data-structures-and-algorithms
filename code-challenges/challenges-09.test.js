@@ -10,6 +10,8 @@ E.g. [4,2,7,5,9,2] -> 9
 ------------------------------------------------------------------------------------------------ */
 const maxInArray = (arr) => {
   // Solution code here...
+  const getMax = (a, b) => Math.max(a, b);
+  return arr.reduce(getMax);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -19,13 +21,15 @@ Write a function named getCourseKeys that takes in the courseInfo object and ret
 
 For example: (['name', 'duration', 'topics', 'finalExam']).
 ------------------------------------------------------------------------------------------------ */
-const courseInfo = { name: 'Code 301', duration: { dayTrack: '4 weeks', eveningTrack: '8 weeks'},
+const courseInfo = {
+  name: 'Code 301', duration: { dayTrack: '4 weeks', eveningTrack: '8 weeks' },
   topics: ['SMACSS', 'APIs', 'NodeJS', 'SQL', 'jQuery', 'functional programming'],
   finalExam: true
 };
 
 const getCourseKeys = (obj) => {
   // Solution code here...
+  return Object.keys(obj);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -38,6 +42,8 @@ Write a function named checkValues that takes in an object and a value and retur
 
 const checkValues = (obj, value) => {
   // Solution code here...
+  return (Object.values(obj).includes(value) ? true : false);
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -61,6 +67,8 @@ HR has asked you to change the data to make it easier to print so that it looks 
 
 const updateNumbers = (obj) => {
   // Solution code here...
+  let newArr = Object.keys(obj).map(key => `${String(key)}: ${String(obj[key])}`);
+  return newArr;
 };
 
 
@@ -117,6 +125,8 @@ const characters = [
 const getHouses = (arr) => {
   let houses = [];
   // Solution code here...
+
+  houses = arr.map(a => a.house);
   return houses;
 };
 
@@ -134,7 +144,7 @@ hasChildrenValues(characters, 'Sansa') will return false
 
 const hasChildrenValues = (arr, character) => {
   // Solution code here...
-
+  return Object.values(arr).character === 'children' ? true : false;
 };
 
 /* ------------------------------------------------------------------------------------------------
