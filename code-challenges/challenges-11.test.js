@@ -18,18 +18,11 @@ Becomes:
 ]
 ------------------------------------------------------------------------------------------------ */
 
-let newArr = [];
 function transformToLis(obj) {
   // Solution code here...
-
-  for (const key in obj) {
-
-    newArr.push(`<li>${key}: ${obj[key]}<li/>`);
-  }
+  let newArr = Object.keys(obj).map(key => { return `<li>${key}: ${obj[key]}</li>`; });
   return newArr;
 }
-
-
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
 
@@ -42,6 +35,10 @@ For example, count(5, [[1, 3, 5, 7, 9], [5, 5, 5], [1, 2, 3]]) returns 4.
 
 const count = (target, input) => {
   // Solution code here...
+  let num = 0;
+  input.map(arryA => arryA.map(arrya => arrya === target && num++));
+
+  return num;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -56,6 +53,10 @@ For example, [[1, 2, 3, 4, 5], [6, 7, 2, 4, 5, 7], [9, 2, 3, 6,]] returns 66.
 
 const totalSum = (input) => {
   // Solution code here...
+  let sum = 0;
+  input.map(arryA => { arryA.map(arrya => sum = sum + arrya); });
+
+  return sum;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -72,6 +73,7 @@ For example, [ [0,2,5,4], [2,4,10], [] ] should return [ [1, 32], [1024], [] ].
 
 const divisibleByFiveTwoToThePower = (input) => {
   // Solution code here...
+  input.map(arryA => { arryA.map(arrya => !arrya % 5 === 0 ? arryA.splice(arryA.indexOf(arrya, 1)) : 2 ^ arrya); });
 };
 
 /* ------------------------------------------------------------------------------------------------
