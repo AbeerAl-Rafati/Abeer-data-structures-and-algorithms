@@ -72,7 +72,7 @@ For example, 'abcdefg' returns 'bdf'
 const onlyOddChars = (str) => {
   // Solution code here...
 
-  let newArr = str.split('').filter(a => { if (a.indexOf % 2) { return (a); } });
+  let newArr = str.split('').filter((a, idx) => { if (idx % 2) { return a; } }).join('');
 
   return newArr;
 };
@@ -85,6 +85,9 @@ Write a function named allHappy that takes in an array of strings and returns a 
 
 const allHappy = (arr) => {
   // Solution code here...
+  let happy = true;
+  arr.map(a => { a.includes(':)') ? happy : happy = false; });
+  return happy;
 };
 
 /* ------------------------------------------------------------------------------------------------
