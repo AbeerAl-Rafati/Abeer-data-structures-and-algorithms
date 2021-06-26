@@ -1,14 +1,18 @@
-'use strict';
+// 'use strict';
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 1 - Review
 
-Write a function named replaceZeros that, given a string, uses Regex to replace all '0' with the word 'zero'. 
+Write a function named replaceZeros that, given a string, uses Regex to replace all '0' with the word 'zero'.
 ------------------------------------------------------------------------------------------------ */
 
 const replaceZeros = (string) => {
   // Solution code here...
-}
+  let regex = /0/g;
+  let newArr = string.replace(regex, 'zero');
+  return newArr;
+
+};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
@@ -20,6 +24,9 @@ If the PIN is four numerical digits long, return true. Otherwise, return false.
 
 const validatePin = (pin) => {
   // Solution code here...
+  let regex = /^[0-9]{4}$/g;
+  let valide = regex.test(pin);
+  return valide;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -32,6 +39,9 @@ If the word is between 5 and 10 characters long, return true. Otherwise, return 
 
 const validateWord = (word) => {
   // Solution code here...
+  let regex = /^[a-z]{5,10}$/g;
+  let valide = regex.test(word);
+  return valide;
 };
 
 /* ------------------------------------------------------------------------------------------------
