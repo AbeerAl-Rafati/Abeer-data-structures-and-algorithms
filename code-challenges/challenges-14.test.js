@@ -12,7 +12,11 @@ Write a function named screenForNames that takes in an array of strings and uses
 
 const screenForNames = (arr) => {
   // Solution code here...
-}
+  let regex = /^((Mr||Mrs||Ms||Dr).\s)[A-Z]/;
+  let newArr = arr.filter(a => a.match(regex));
+  return newArr;
+};
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
@@ -24,6 +28,10 @@ For example, ['apple', 'banana', 'MacGyver'] returns ['Apple', 'Banana', 'MacGyv
 
 const toTitleCase = (arr) => {
   // Solution code here...
+  let first = /\b(\w)/g;
+  let newArr = arr.map(a => a.replace(first, (x, match, idx) => { if (idx === 0) { match.toUpperCase(); } }));
+
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
